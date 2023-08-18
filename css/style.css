@@ -1,0 +1,132 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND & MAIN CONTAINER DESIGN */
+
+.bg-extra{
+    height: 100vh;
+    position: fixed;
+}
+
+.container-extra-settings{
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    height: 80%;
+    width: 30%;
+    padding: 80px 120px;
+    border: 0.5rem solid  #000;
+    border-radius: 6%;
+    background: rgb(222,85,132);
+    background: radial-gradient(circle, rgba(222,85,132,1) 0%, rgba(175,0,101,1) 100%);
+    /* background: rgb(222,85,132);
+    background: linear-gradient(0deg, rgba(222,85,132,1) 0%, rgba(175,0,101,1) 100%); */
+    /* background: rgb(175,0,101);
+    background: linear-gradient(0deg, rgba(175,0,101,1) 0%, rgba(222,85,132,1) 100%); */
+    filter: drop-shadow(0 0 0.75rem #fff);
+}
+
+.logo{
+    margin-top: 12%;
+}
+
+.bottom-img{
+    margin-bottom: 5%;
+}
+
+/* CIRCULAR PROGRESS BAR DESIGN */
+
+.container{
+    display: flex;
+    width:auto;
+    margin-top: 25%;
+}
+
+.circular-progress{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#191a20 3.6deg, #8b8787 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.progress-value{
+    position: relative;
+    font-size: 28px;
+    font-weight: 600;
+    color: #191a20;
+}
+
+
+/* SONGS SECTION DESIGN */
+
+.song{
+    border: 0.3rem solid black;
+    border-radius: 15px;
+    background-color: #191a20;
+    filter: drop-shadow(0 0 0.75rem #fff);
+    width: 100%;
+}
+
+.song img{
+    padding: 0;
+    height: 90px;
+    width: 110px;
+    border-radius: 15px;
+}
+
+.song h2{
+    color: #d992be;
+}
+
+.song p{
+    margin-top: 15px;
+    text-align: center;
+    font-style: italic;
+    color: #d992be;
+}
+
+.song button{
+    background-color: #af0065;
+}
+
+.overlay-container{
+    position: relative;
+}
+
+.overlay-container img{
+    display: block;
+}
+
+.overlay-container i{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.icon:hover{
+    cursor: pointer;
+    color: #fff !important;
+}
+
+
+
+
+
+
