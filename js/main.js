@@ -1,29 +1,27 @@
-
 // CIRCULAR PROGRESS BAR
 
 let circularProgress = document.querySelector(".circular-progress"),
-    progressValue = document.querySelector(".progress-value");
+  progressValue = document.querySelector(".progress-value");
 
 let progressStartValue = 0,
-    progressEndValue = 100,
-    speed = 50;
-
+  progressEndValue = 100,
+  speed = 50;
 
 let progress = setInterval(() => {
-    progressStartValue++;
+  progressStartValue++;
 
-    progressValue.textContent = `${progressStartValue}%`;
-    circularProgress.style.background = `conic-gradient(#191a20 ${progressStartValue * 3.6}deg, #ededed 0deg)`;
- 
-    if(progressStartValue == progressEndValue){
-        clearInterval(progress);
-        changeContent();
-    }
+  progressValue.textContent = `${progressStartValue}%`;
+  circularProgress.style.background = `conic-gradient(#191a20 ${
+    progressStartValue * 3.6
+  }deg, #ededed 0deg)`;
 
-   // console.log(progressStartValue);
+  if (progressStartValue == progressEndValue) {
+    clearInterval(progress);
+    changeContent();
+  }
 
+  // console.log(progressStartValue);
 }, speed);
-
 
 // CHANGING CONTENT
 
@@ -32,35 +30,23 @@ const songsContent = document.querySelector("#songs-options");
 //console.log(mainContent);
 //console.log(songsContent);
 
-function changeContent(){
-    if(progressStartValue == 100){
-        mainContent.classList.replace("d-flex", "d-none");
-        songsContent.classList.replace("d-none", "d-flex");
-    }
+function changeContent() {
+  if (progressStartValue == 100) {
+    mainContent.classList.replace("d-flex", "d-none");
+    songsContent.classList.replace("d-none", "d-flex");
+  }
 }
 
 // AUDIO BUTTONS
+function toggleAudio(audioIndex) {
+        const audioElement = document.querySelector(`.audio${audioIndex}`);
+        const toggleButton = document.querySelector(`.togglePlayPause:nth-child(${audioIndex})`);
 
-//toggle!!!
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
+       if (audioElement.paused) {
+            audioElement.play();
+           
+        } else {
+            audioElement.pause();
+            
+        }
+    }

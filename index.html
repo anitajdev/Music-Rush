@@ -1,102 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title-main Page</title>
-    <script src="https://kit.fontawesome.com/6518a1b061.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <script
+      src="https://kit.fontawesome.com/6518a1b061.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="has-bg-img">
+      <!-- Background image -->
 
-<div class="has-bg-img">
+      <img
+        src="img/black-headphones2.jpg"
+        alt="background-picture"
+        class="bg-img img-fluid bg-extra"
+      />
 
-    <!-- Background image -->
+      <!-- Main & loading section -->
 
-    <img src="img/black-headphones2.jpg" alt="background-picture" class="bg-img img-fluid bg-extra">
-
-    <!-- Main & loading section -->
-
-    <div class="d-flex flex-column mb-3 justify-content-center align-items-center container-extra-settings" id="main-page">
-            <div class=" p-2 position-absolute top-0 start-50 translate-middle-x logo">
-            <img src="img/logo-final.jpg" alt="logo" class="w-100">
-            </div>
-
-            <div class="p-2 container">
-                <div class="circular-progress position-absolute top-50 start-50 translate-middle">
-                    <span class="progress-value">0%</span>
-                </div>
-            </div>
-
-            <div class="p-2 position-absolute bottom-0 start-50 translate-middle-x bottom-img">
-                <img src="img/bottompicture1.jpg" alt="load-bottom-page" class="w-100 ">
-            </div>
-
-    </div> 
-
-    <!-- Songs section -->
-
-    <div class="d-none flex-column mb-3 justify-content-center align-items-center container-extra-settings" id="songs-options">
-
-        <div class="highscore"> </div>
-
-        <div class="d-flex flex-column mt-4 mb-3 align-items-start">
-
-            <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
-                <div class="overlay-container">
-                    <i class="fa-solid fa-circle-play icon" style="color:#af0065;"></i>
-                    <img src="img/adel.jpeg" alt="Adel" class="p-2">
-                </div>
-
-                <h2 class="p-2 align-self-center">Easy on me</h2>
-                <p class="p-2 align-self-center">Adel</p>
-                <button class="p-2 align-self-center btn btn-outline-light">PLAY</button>
-            </div>
-
-            <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
-                <div class="overlay-container">
-                    <i class="fa-solid fa-circle-play icon" style="color:#af0065;"></i>
-                    <img src="img/bruno .jpeg" alt="Bruno Mars" class="p-2">
-                </div>
-
-                <h2 class="p-2 align-self-center">Grenade</h2>
-                <p class="p-2 align-self-center">Bruno Mars</p>
-                <button class="p-2 align-self-center btn btn-outline-light">PLAY</button>
-            </div>
-
-            <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
-                <div class="overlay-container">
-                    <i class="fa-solid fa-circle-play icon" style="color:#af0065;"></i>
-                    <img src="img/ed.jpeg" alt="Ed Sheeran" class="p-2">
-                </div>
-
-                <h2 class="p-2 align-self-center">Shape of You</h2>
-                <p class="p-2 align-self-center">Ed Sheeran</p>
-                <button class="p-2 align-self-center btn btn-outline-light">PLAY</button>
-            </div>
-
-            <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
-                <div class="overlay-container">
-                    <i class="fa-solid fa-circle-play icon" style="color:#af0065;"></i>
-                    <!-- <i class="fa-solid fa-circle-pause icon" style="color:#af0065;"></i> -->
-                    <img src="img/billie.jpeg" alt="Bille Eilish x Kalid" class="p-2">
-                </div>
-
-                <h2 class="p-2 align-self-center">Lovely</h2>
-                <p class="p-2 align-self-center">Billie x Kalid</p>
-                <button class="p-2 align-self-center btn btn-outline-light">PLAY</button>
-            </div>
-
+      <div
+        class="d-flex flex-column mb-3 justify-content-center align-items-center container-extra-settings"
+        id="main-page"
+      >
+        <div
+          class="p-2 position-absolute top-0 start-50 translate-middle-x logo"
+        >
+          <img src="img/logo-final.jpg" alt="logo" class="w-100" />
         </div>
 
+        <div class="p-2 container">
+          <div
+            class="circular-progress position-absolute top-50 start-50 translate-middle"
+          >
+            <span class="progress-value">0%</span>
+          </div>
+        </div>
+
+        <div
+          class="p-2 position-absolute bottom-0 start-50 translate-middle-x bottom-img"
+        >
+          <img
+            src="img/bottompicture1.jpg"
+            alt="load-bottom-page"
+            class="w-100"
+          />
+        </div>
+      </div>
+
+      <!-- Songs section -->
+
+      <div
+        class="d-none flex-column mb-3 justify-content-center align-items-center container-extra-settings"
+        id="songs-options"
+      >
+        <div class="highscore"></div>
+
+        <div class="d-flex flex-column mt-4 mb-3 align-items-start">
+          <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
+            <div class="overlay-container">
+              <button class="togglePlayPause" onclick="toggleAudio(1)">
+                <i class="fa-solid fa-circle-play icon" style="color: #af0065">
+                  <audio
+                    src="./toggle music/Adele - Easy On Me (Official Lyric Video).mp3"
+                    class="audio1"
+                  ></audio>
+                </i>
+              </button>
+              <img src="img/adel.jpeg" alt="Adel" class="p-2" />
+            </div>
+
+            <h2 class="p-2 align-self-center">Easy on me</h2>
+            <p class="p-2 align-self-center">Adel</p>
+            <button class="p-2 align-self-center btn btn-outline-light">
+              PLAY
+            </button>
+          </div>
+
+          <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
+            <div class="overlay-container">
+              <button class="togglePlayPause" onclick="toggleAudio(2)">
+                <i class="fa-solid fa-circle-play icon" style="color: #af0065">
+                  <audio
+                    src="./toggle music/Bruno Mars - Grenade (Official Music Video).mp3"
+                    class="audio2"
+                  ></audio>
+                </i>
+              </button>
+              <img src="img/bruno .jpeg" alt="Bruno Mars" class="p-2" />
+            </div>
+
+            <h2 class="p-2 align-self-center">Grenade</h2>
+            <p class="p-2 align-self-center">Bruno Mars</p>
+            <button class="p-2 align-self-center btn btn-outline-light">
+              PLAY
+            </button>
+          </div>
+
+          <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
+            <div class="overlay-container">
+              <button class="togglePlayPause" onclick="toggleAudio(3)">
+                <i class="fa-solid fa-circle-play icon" style="color: #af0065">
+                  <audio
+                    src="./toggle music/Ed Sheeran - Shape Of You (Lyrics).mp3"
+                    class="audio3"
+                  ></audio>
+                </i>
+              </button>
+              <img src="img/ed.jpeg" alt="Ed Sheeran" class="p-2" />
+            </div>
+
+            <h2 class="p-2 align-self-center">Shape of You</h2>
+            <p class="p-2 align-self-center">Ed Sheeran</p>
+            <button class="p-2 align-self-center btn btn-outline-light">
+              PLAY
+            </button>
+          </div>
+
+          <div class="p-2 d-flex flex-row mb-3 justify-content-between song">
+            <div class="overlay-container">
+              <button class="togglePlayPause" onclick="toggleAudio(4)">
+                <i class="fa-solid fa-circle-play icon" style="color: #af0065">
+                  <audio
+                    src="./toggle music/Billie Eilish x Khalid - Lovely .mp3"
+                    class="audio4"
+                  ></audio>
+                </i>
+              </button>
+              <img
+                src="img/billie.jpeg"
+                alt="Bille Eilish x Kalid"
+                class="p-2"
+              />
+            </div>
+
+            <h2 class="p-2 align-self-center">Lovely</h2>
+            <p class="p-2 align-self-center">Billie x Kalid</p>
+            <button class="p-2 align-self-center btn btn-outline-light">
+              PLAY
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-</div>
-
-
-<script src="js/main.js"></script>
-<script src="dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="js/main.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

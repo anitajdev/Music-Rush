@@ -75,7 +75,15 @@
 
 
 /* SONGS SECTION DESIGN */
-
+.togglePlayPause{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 19px;
+    border: none;
+    background-color: #191a20;
+}
 .song{
     border: 0.3rem solid black;
     border-radius: 15px;
