@@ -91,6 +91,9 @@
     border-radius: 15px;
 }
 
+h2{
+    font-size: 1.25em;
+}
 .song h2{
     color: #d992be;
 }
