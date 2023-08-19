@@ -39,14 +39,23 @@ function changeContent() {
 
 // AUDIO BUTTONS
 function toggleAudio(audioIndex) {
-        const audioElement = document.querySelector(`.audio${audioIndex}`);
-        const toggleButton = document.querySelector(`.togglePlayPause:nth-child(${audioIndex})`);
+  const audioElement = document.querySelector(`.audio${audioIndex}`);
 
-       if (audioElement.paused) {
-            audioElement.play();
-           
-        } else {
-            audioElement.pause();
-            
-        }
-    }
+  if (audioElement.paused) {
+    audioElement.play();
+  } else {
+    audioElement.pause();
+  }
+}
+
+//PLAY BTNs connect to the game onclick
+const play = document.querySelectorAll(".play");
+
+play.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "./game.html";
+  });
+});
+
+
+
