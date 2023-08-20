@@ -143,3 +143,20 @@ audio.addEventListener("timeupdate", () => {
     });
   }
 });
+
+ // tiles.forEach((tile) => {
+  //   tile.addEventListener("click", () => {
+  //     // Increase the score when a tile is clicked
+  //     score++;
+  //     scoreElement.textContent = score;
+
+  //     // Reset the tile's position and opacity when clicked
+  //     tile.style.top = "-10%";
+  //     tile.style.opacity = "0";
+
+  //     // Set a timeout to restore the tile's opacity after a short delay
+  //     setTimeout(() => {
+  //       tile.style.opacity = "1";
+  //     }, 200);
+  //   });
+  // });
