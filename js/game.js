@@ -36,6 +36,7 @@ const startButton = document.querySelector(".start-bttn"); //NEW ELEMENT
 const gameHeader = document.querySelector(".game-header"); // NEW ELEMENT
 
 startButton.addEventListener("click", () => {
+  audio.play();
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.classList.replace("d-block", "d-none");
   scoreElement.style.display = "block";
@@ -91,7 +92,6 @@ function startGame() {
   resultBox.classList.add("d-none");
   audioElement.play();
   gameInterval = setInterval(moveTiles, 10);
-  audio.play();
 }
 
 // Move the tiles
