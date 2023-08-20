@@ -20,6 +20,7 @@ startButton.addEventListener("click", function(){
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.classList.replace("d-block", "d-none");
   scoreElement.style.display = "block";
+  startGame();
 });
 
 // Create tiles
@@ -104,7 +105,7 @@ restartButton.addEventListener("click", () => {
   startGame();
 });
 
-// Start the game when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  startGame();
-});
+// // Start the game when the page loads
+// document.addEventListener("DOMContentLoaded", () => {
+//   startGame();
+// });
