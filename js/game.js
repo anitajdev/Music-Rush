@@ -23,7 +23,7 @@ let isGameStarted = false;
 let tilesInterval;
 let gameInterval;
 let tiles = [];
-let tileSpeed = 3;
+let tileSpeed = 1;
 
 // Get the required elements from the HTML
 
@@ -77,6 +77,7 @@ function spawnTile() {
   tile.classList.add("tile");
   const randomIndex = Math.floor(Math.random() * 4) + 1;
   tile.dataset.index = randomIndex;
+  tile.style.top = `${-tile.clientHeight}px`; // Set initial position above the visible area
   tile.addEventListener("click", () => handleClick(randomIndex));
   tilesContainer.appendChild(tile);
   tiles.push(tile);
@@ -87,18 +88,20 @@ function startGame() {
   score = 0;
   tiles = [];
   tilesContainer.innerHTML = "";
-  spawnTile();
   updateScore();
   resultBox.classList.add("d-none");
-  audioElement.play();
-  gameInterval = setInterval(moveTiles, 10);
+  setTimeout(() => {
+    spawnTile(); // Start spawning tiles after the delay
+    gameInterval = setInterval(moveTiles, 10);
+    audio.play(); // Start playing audio
+  }, 5000); // 5s delay
 }
 
 // Move the tiles
 function moveTiles() {
   tiles.forEach((tile) => {
     const currentTop = parseInt(getComputedStyle(tile).top);
-    const newTop = currentTop + 1;
+    const newTop = currentTop + tileSpeed;
     tile.style.top = `${newTop}px`;
 
     if (newTop >= window.innerHeight) {
@@ -125,16 +128,16 @@ restartButton.addEventListener("click", () => {
   startGame();
 });
 
-// audio.addEventListener("timeupdate", () => {
-//   if (isGameStarted) {
-//     const audioPosition = audio.currentTime;
-//     const tilePosition = (audioPosition / audio.duration) * 100;
+audio.addEventListener("timeupdate", () => {
+  if (isGameStarted) {
+    const audioPosition = audio.currentTime;
+    const tilePosition = (audioPosition / audio.duration) * 100;
 
-//     tiles.forEach((tile) => {
-//       tile.style.top = `${tilePosition}%`;
-//       if (tilePosition > 100) {
-//         endGame();
-//       }
-//     });
-//   }
-// });
+    tiles.forEach((tile) => {
+      tile.style.top = `${tilePosition}%`;
+      if (tilePosition > 100) {
+        endGame();
+      }
+    });
+  }
+});
