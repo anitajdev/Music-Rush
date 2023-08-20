@@ -1,6 +1,28 @@
-// Get the required elements from the HTML
-const tilesContainer = document.getElementById("tiles");
+// Get song information from query parameters
+const urlParams = new URLSearchParams(window.location.search);
+const artist = urlParams.get("artist");
+const title = urlParams.get("title");
+
+// Update header with song information
+const songTitleHeader = document.querySelector(".game-header-info h2");
+const artistNameHeader = document.querySelector(".game-header-info p");
+songTitleHeader.textContent = title;
+artistNameHeader.textContent = artist;
+
+// Game logic
+const gameContainer = document.querySelector("#game-container");
+const tilesContainer = document.querySelector(".tiles");
 const scoreElement = document.getElementById("score");
+
+let score = 0;
+let isGameStarted = false;
+let tilesInterval;
+let gameInterval;
+let tiles = [];
+let tileSpeed = 3;
+
+// Get the required elements from the HTML
+
 const resultBox = document.querySelector(".result_box");
 const finalScoreText = document.querySelector(".final_score_text");
 const encouragementText = document.querySelector(".encouragement-text");
@@ -9,29 +31,24 @@ const audioElement = document.getElementById("audio");
 const startButton = document.querySelector(".start-bttn"); //NEW ELEMENT
 const gameHeader = document.querySelector(".game-header"); // NEW ELEMENT
 
-// Game variables
-let score = 0;
-let tiles = [];
-let gameInterval;
-
-// NEW CHANGE - START THE GAME
-
-startButton.addEventListener("click", function () {
+startButton.addEventListener("click", () => {
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.classList.replace("d-block", "d-none");
   scoreElement.style.display = "block";
   startGame();
-});
 
-// Create tiles
-for (let i = 1; i <= 4; i++) {
-  const tile = document.createElement("div");
-  tile.classList.add("tile");
-  tile.dataset.index = i;
-  tile.addEventListener("click", () => handleClick(i));
-  tilesContainer.appendChild(tile);
-  tiles.push(tile);
-}
+  // Your game logic to make the tiles fall and check for clicks
+
+  // Create tiles
+  for (let i = 1; i <= 4; i++) {
+    const tile = document.createElement("div");
+    tile.classList.add("tile");
+    tile.dataset.index = i;
+    tile.addEventListener("click", () => handleClick(i));
+    tilesContainer.appendChild(tile);
+    tiles.push(tile);
+  }
+});
 
 // Handle tile clicks
 function handleClick(index) {
@@ -104,3 +121,8 @@ function endGame() {
 restartButton.addEventListener("click", () => {
   startGame();
 });
+
+// // Start the game when the page loads
+// document.addEventListener("DOMContentLoaded", () => {
+//   startGame();
+// });
