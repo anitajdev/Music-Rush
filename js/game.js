@@ -59,8 +59,9 @@ function updateScore() {
 
 // Handle tile clicks
 function handleClick(index) {
+  // alert("test") ovde udje 
   if (index === tiles[0].dataset.index) {
-    // alert("test")
+    // alert("test") ovde ne udje ???
     tiles[0].classList.add("clicked");
     score++;
     updateScore();
