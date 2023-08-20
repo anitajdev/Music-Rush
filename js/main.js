@@ -49,13 +49,24 @@ function toggleAudio(audioIndex) {
 }
 
 //PLAY BTNs connect to the game onclick
-const play = document.querySelectorAll(".play");
+// const play = document.querySelectorAll(".play");
 
-play.forEach((btn) => {
+// play.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     window.location.href = "./game.html";
+//   });
+// });
+
+const playButtons = document.querySelectorAll(".play");
+
+playButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    window.location.href = "./game.html";
+    const artist = btn.parentElement.querySelector("p").textContent;
+    const title = btn.parentElement.querySelector("h2").textContent;
+
+    const queryString = `?artist=${encodeURIComponent(artist)}&title=${encodeURIComponent(title)}`;
+    window.location.href = `./game.html${queryString}`;
   });
 });
-
 
 
