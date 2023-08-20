@@ -36,10 +36,10 @@ const startButton = document.querySelector(".start-bttn"); //NEW ELEMENT
 const gameHeader = document.querySelector(".game-header"); // NEW ELEMENT
 
 startButton.addEventListener("click", () => {
-  audio.play();
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.classList.replace("d-block", "d-none");
   scoreElement.style.display = "block";
+  audio.play();
   startGame();
 
   // Create tiles
@@ -88,13 +88,13 @@ function startGame() {
   score = 0;
   tiles = [];
   tilesContainer.innerHTML = "";
-  updateScore();
+  // updateScore();
   resultBox.classList.add("d-none");
   setTimeout(() => {
     spawnTile(); // Start spawning tiles after the delay
     gameInterval = setInterval(moveTiles, 10);
-    audio.play(); // Start playing audio
-  }, 5000); // 5s delay
+    // audio.play(); // Start playing audio
+  }, 3500); // 5s delay
 }
 
 // Move the tiles
