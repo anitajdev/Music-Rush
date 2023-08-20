@@ -89,8 +89,10 @@ function spawnTile() {
   tilesContainer.appendChild(tile);
   tiles.push(tile);
 }
+
 // Start the game
 function startGame() {
+  //code without the delay 
   // audio.play();
   // score = 0;
   // tiles = [];
@@ -103,7 +105,7 @@ function startGame() {
   score = 0;
   tiles = [];
   tilesContainer.innerHTML = "";
-  updateScore();
+  // updateScore();
   resultBox.classList.add("d-none");
   setTimeout(() => {
     spawnTile(); // Start spawning tiles after the delay
