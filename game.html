@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <script src="https://kit.fontawesome.com/6518a1b061.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/game.css">
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/6518a1b061.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="has-bg-img">
+      <!-- Background image -->
 
-<div class="has-bg-img">
+      <img
+        src="img/black-headphones2.jpg"
+        alt="background-picture"
+        class="bg-img img-fluid bg-extra"
+      />
 
-    <!-- Background image -->
+      <!-- Game section -->
 
-    <img src="img/black-headphones2.jpg" alt="background-picture" class="bg-img img-fluid bg-extra">
-
-    <!-- Game section -->
-
-    <div class="d-flex flex-column mb-3 justify-content-center align-items-center game-style">
-
+      <div
+        class="d-flex flex-column mb-3 justify-content-center align-items-center game-style"
+      >
         <div class="stars"></div>
 
         <div class="d-flex flex-column mb-3 game-header">
+          <div
+            class="p-2 d-flex flex-column mb-3 align-items-center game-header-info"
+          >
+            <h2 class="p-2">Song title</h2>
+            <p class="p-2">Artist</p>
+          </div>
 
-            <div class="p-2 d-flex flex-column mb-3 align-items-center game-header-info">
-                <h2 class="p-2">Song title</h2>
-                <p class="p-2">Artist</p>
-            </div>
-
-            <div class="p-2 align-self-start game-header-highscore"></div>
-
+          <div class="p-2 align-self-start game-header-highscore"></div>
         </div>
 
-
-        <div class="d-block" id="game">
-            <div id="game-container">
-                <div class="line" id="line1"></div>
-                <div class="line" id="line2"></div>
-                <div class="line" id="line3"></div>
-                <div class="line" id="line4"></div>
-                <div class="line" id="line5"></div>
-            </div>
-
-            <div class="tiles" id="tiles"></div> 
-            <div class="score"><p id="score">0</p></div>
+        <div class="d-flex justify-content-center game">
+          <div class="p-2 game-track1"></div>
+          <div class="p-2 game-track2"></div>
+          <div class="p-2 game-track3"></div>
+          <div class="p-2 game-track4"></div>
+          <div class="p-2 game-track5"></div>
+          <div class="score"><p id="score">0</p></div>
         </div>
 
-        <button type="button" class="d-block p-2 mt-3 align-self-center btn btn-outline-light dark-btn start-bttn">START</button>
+        <div class="d-flex justify-content-center tiles">
+          <div class="p-2 tile1"></div>
+          <div class="p-2 tile2"></div>
+          <div class="p-2 tile3"></div>
+          <div class="p-2 tile4"></div>
+          <div class="p-2 tile5"></div>
+        </div>
+
+        <button class="start-button">
+          <p>START</p>
+        </button>
 
         <div class="d-none result_box">
+          <div class="stars"></div>
 
-            <div class="stars"></div>
+          <div class="final_score_text">You've scored 0 points</div>
 
-            <div class="final_score_text">You've scored 0 points</div>
+          <div class="stars-won"></div>
 
-            <div class="stars-won"></div>
+          <div class="encouragement-text">UNBELIEVABLE</div>
 
-            <div class="encouragement-text">UNBELIEVABLE</div>
-        
-            <div class="buttons">
-                <button class="restart p-2 mt-3 align-self-center btn btn-outline-light dark-btn">Replay</button>
-            </div>
-
+          <div class="buttons">
+            <button class="restart">Replay</button>
+          </div>
         </div>
-
-        
 
         <!-- <audio id="audio" src="https://drive.google.com/uc?id=1vCDIoUu4NIjBlMOee-wTDsHBMc1bxzES" hidden>
         <audio id="play" src="https://drive.google.com/uc?id=16ZqyQo4C59nUeXcP7H7L7XzUwrI7f3bW" hidden>
         <audio id="out" src="https://drive.google.com/uc?id=1OtAEm0PY38LdtKPBRe_ucoysYkAY7cG2" hidden>
         <audio id="result" src="https://drive.google.com/uc?id=1GvdIT1VsX48R9emQHCWxs4KP-hEQxeal" hidden> -->
-
+      </div>
     </div>
 
-</div>
-
-
-
-<script src="./js/game.js"></script>
-<script src="dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="js/game.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
