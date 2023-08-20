@@ -2,12 +2,16 @@
 const urlParams = new URLSearchParams(window.location.search);
 const artist = urlParams.get("artist");
 const title = urlParams.get("title");
+const audioSrc = urlParams.get("audio");
 
 // Update header with song information
 const songTitleHeader = document.querySelector(".game-header-info h2");
 const artistNameHeader = document.querySelector(".game-header-info p");
 songTitleHeader.textContent = title;
 artistNameHeader.textContent = artist;
+
+// Load and play audio
+const audio = new Audio(audioSrc);
 
 // Game logic
 const gameContainer = document.querySelector("#game-container");
@@ -36,8 +40,6 @@ startButton.addEventListener("click", () => {
   startButton.classList.replace("d-block", "d-none");
   scoreElement.style.display = "block";
   startGame();
-
-  // Your game logic to make the tiles fall and check for clicks
 
   // Create tiles
   for (let i = 1; i <= 4; i++) {
@@ -89,6 +91,7 @@ function startGame() {
   resultBox.classList.add("d-none");
   audioElement.play();
   gameInterval = setInterval(moveTiles, 10);
+  audio.play();
 }
 
 // Move the tiles
@@ -122,7 +125,16 @@ restartButton.addEventListener("click", () => {
   startGame();
 });
 
-// // Start the game when the page loads
-// document.addEventListener("DOMContentLoaded", () => {
-//   startGame();
+// audio.addEventListener("timeupdate", () => {
+//   if (isGameStarted) {
+//     const audioPosition = audio.currentTime;
+//     const tilePosition = (audioPosition / audio.duration) * 100;
+
+//     tiles.forEach((tile) => {
+//       tile.style.top = `${tilePosition}%`;
+//       if (tilePosition > 100) {
+//         endGame();
+//       }
+//     });
+//   }
 // });

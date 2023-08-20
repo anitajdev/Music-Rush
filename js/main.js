@@ -54,10 +54,13 @@ playButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const artist = btn.parentElement.querySelector("p").textContent;
     const title = btn.parentElement.querySelector("h2").textContent;
+    const audioSrc = btn.querySelector("audio").getAttribute("src");
 
-    const queryString = `?artist=${encodeURIComponent(artist)}&title=${encodeURIComponent(title)}`;
+    const queryString = `?artist=${encodeURIComponent(
+      artist
+    )}&title=${encodeURIComponent(title)}&audio=${encodeURIComponent(
+      audioSrc
+    )}`;
     window.location.href = `./game.html${queryString}`;
   });
 });
-
-
