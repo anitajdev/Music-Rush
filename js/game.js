@@ -31,7 +31,6 @@ const resultBox = document.querySelector(".result_box");
 const finalScoreText = document.querySelector(".final_score_text");
 const encouragementText = document.querySelector(".encouragement-text");
 const restartButton = document.querySelector(".restart");
-const audioElement = document.getElementById("audio");
 const startButton = document.querySelector(".start-bttn"); //NEW ELEMENT
 const gameHeader = document.querySelector(".game-header"); // NEW ELEMENT
 
@@ -53,9 +52,15 @@ startButton.addEventListener("click", () => {
   }
 });
 
+// Update score element
+function updateScore() {
+  scoreElement.textContent = score;
+}
+
 // Handle tile clicks
 function handleClick(index) {
   if (index === tiles[0].dataset.index) {
+    // alert("test")
     tiles[0].classList.add("clicked");
     score++;
     updateScore();
@@ -66,35 +71,44 @@ function handleClick(index) {
   }
 }
 
-// Update score element
-function updateScore() {
-  scoreElement.textContent = score;
-}
-
-// Spawn a new tile
+/// Spawn a new tile
 function spawnTile() {
   const tile = document.createElement("div");
   tile.classList.add("tile");
   const randomIndex = Math.floor(Math.random() * 4) + 1;
   tile.dataset.index = randomIndex;
-  tile.style.top = `${-tile.clientHeight}px`; // Set initial position above the visible area
+
+  // Calculate tile position based on audio position and duration
+  const audioPosition = audio.currentTime;
+  const audioDuration = audio.duration;
+  const tilePosition = (audioPosition / audioDuration) * 100;
+
+  tile.style.top = `${tilePosition}%`; // Set initial position based on audio position
   tile.addEventListener("click", () => handleClick(randomIndex));
   tilesContainer.appendChild(tile);
   tiles.push(tile);
 }
-
 // Start the game
 function startGame() {
+  // audio.play();
+  // score = 0;
+  // tiles = [];
+  // tilesContainer.innerHTML = "";
+  // spawnTile();
+  // updateScore();
+  // resultBox.classList.add("d-none");
+  // gameInterval = setInterval(moveTiles, 10);
+
   score = 0;
   tiles = [];
   tilesContainer.innerHTML = "";
-  // updateScore();
+  updateScore();
   resultBox.classList.add("d-none");
   setTimeout(() => {
     spawnTile(); // Start spawning tiles after the delay
     gameInterval = setInterval(moveTiles, 10);
-    // audio.play(); // Start playing audio
-  }, 3500); // 5s delay
+    audio.play(); // Start playing audio
+  }, 4000); // 4 seconds delay
 }
 
 // Move the tiles
@@ -113,7 +127,7 @@ function moveTiles() {
 // End the game
 function endGame() {
   clearInterval(gameInterval);
-  audioElement.pause();
+  audio.pause();
   resultBox.classList.remove("d-none");
   finalScoreText.textContent = `You've scored ${score} points`;
   if (score >= 50) {
