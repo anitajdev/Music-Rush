@@ -6,11 +6,21 @@ const finalScoreText = document.querySelector(".final_score_text");
 const encouragementText = document.querySelector(".encouragement-text");
 const restartButton = document.querySelector(".restart");
 const audioElement = document.getElementById("audio");
+const startButton = document.querySelector(".start-bttn"); //NEW ELEMENT
+const gameHeader = document.querySelector(".game-header"); // NEW ELEMENT
 
 // Game variables
 let score = 0;
 let tiles = [];
 let gameInterval;
+
+// NEW CHANGE - START THE GAME
+
+startButton.addEventListener("click", function(){
+  gameHeader.classList.replace("d-flex", "d-none");
+  startButton.classList.replace("d-block", "d-none");
+  scoreElement.style.display = "block";
+});
 
 // Create tiles
 for (let i = 1; i <= 4; i++) {

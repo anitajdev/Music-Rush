@@ -92,6 +92,7 @@
 }
 
 .score p {
+  display: none;
   font-size: 40px;
   width: auto;
   color: rgb(255, 0, 85);
@@ -158,3 +159,17 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+
+.start-bttn{
+  background-color: rgba(175, 0, 101, 0.6);
+  border: 1px solid #000;
+}
+
+.start-bttn:hover{
+  background-color: #fff;
+  color: rgba(175, 0, 101, 1);
+}
+
+
+
