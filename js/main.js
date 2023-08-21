@@ -39,14 +39,33 @@ function changeContent() {
 
 // AUDIO BUTTONS
 function toggleAudio(audioIndex) {
-        const audioElement = document.querySelector(`.audio${audioIndex}`);
-        const toggleButton = document.querySelector(`.togglePlayPause:nth-child(${audioIndex})`);
+  const audioElement = document.querySelector(`.audio${audioIndex}`);
 
-       if (audioElement.paused) {
-            audioElement.play();
-           
-        } else {
-            audioElement.pause();
-            
-        }
-    }
+  if (audioElement.paused) {
+    audioElement.play();
+  } else {
+    audioElement.pause();
+  }
+}
+
+
+
+
+//PLAY BUTTONS
+const playButtons = document.querySelectorAll(".play");
+
+playButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const artist = btn.parentElement.querySelector("p").textContent;
+    const title = btn.parentElement.querySelector("h2").textContent;
+    const audioSrc = btn.querySelector("audio").getAttribute("src");
+
+    const queryString = `?artist=${encodeURIComponent(
+      artist
+    )}&title=${encodeURIComponent(title)}&audio=${encodeURIComponent(
+      audioSrc
+    )}`;
+
+    window.location.href = `./game.html${queryString}`;
+  });
+});
