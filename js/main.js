@@ -49,28 +49,28 @@ function toggleAudio(audioIndex) {
   }
 }
 
-// let clicked = false;
+let clicked = false;
 
-// function toggleAudio(audioIndex) {
-//   const audioElement = document.querySelector(`.audio${audioIndex}`);
-//   const playPauseButtons = document.querySelectorAll(".togglePlayPause");
+function toggleAudio(audioIndex) {
+  const audioElement = document.querySelector(`.audio${audioIndex}`);
+  const playPauseButtons = document.querySelectorAll(".togglePlayPause");
 
-//   playPauseButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       const playPauseIcon = button.querySelector(".icon");
+  playPauseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const playPauseIcon = button.querySelector(".icon");
 
-//       if (audioElement.paused) {
-//         console.log("Playing...");
-//         audioElement.play();
-//         playPauseIcon.classList.replace("fa-circle-play", "fa-circle-pause");
-//       } else {
-//         console.log("Pausing...");
-//         audioElement.pause();
-//         playPauseIcon.classList.replace("fa-circle-pause", "fa-circle-play");
-//       }
-//     });
-//   });
-// }
+      if (audioElement.paused) {
+        console.log("Playing...");
+        audioElement.play();
+        playPauseIcon.classList.replace("fa-circle-play", "fa-circle-pause");
+      } else {
+        console.log("Pausing...");
+        audioElement.pause();
+        playPauseIcon.classList.replace("fa-circle-pause", "fa-circle-play");
+      }
+    });
+  });
+}
 
 const playButtons = document.querySelectorAll(".play");
 
