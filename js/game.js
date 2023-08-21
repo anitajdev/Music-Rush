@@ -227,14 +227,13 @@ function calculateScore(){
 }
 
 
-function showResult(){
+function showResult(sco){
 
   let result = `<div class="d-flex flex-column mb-3 result_box">
 
-  <div class="p-2 final_score_text">You've scored 0 points</div>
-
+  <div class="p-2 final_score_text">You've scored ${sco} points</div>
   <div class="p-2 buttons">
-  <a class="btn btn-primary" href="#" role="button">Retry</a>
+  <a class="btn btn-primary" href="index.html" role="button">Retry</a>
   </div>
 </div>`;
 
