@@ -65,6 +65,15 @@ tile5.addEventListener("click", function () {
   handleTileClick(tile5);
 });
 
+// Function to handle tile clicks
+function handleTileClick(tile) {
+  if (tile.style.opacity === "1") {
+    score++;
+    scoreElement.textContent = `Score: ${score}`;
+    tile.style.opacity = "0";
+  }
+}
+
 // // Game variables
 
 let startPos1 = -40;
@@ -76,9 +85,8 @@ let startPos5 = -55;
 let endPos = 90;
 let score = 0;
 
-
 function startGame() {
-
+  let gameInterval;
   let moving1 = setInterval(() => {
     startPos1++;
 
@@ -172,14 +180,7 @@ function startGame() {
     }
   }, 70);
 }
-// Function to handle tile clicks
-function handleTileClick(tile) {
-  if (tile.style.opacity === "1") {
-    score++;
-    scoreElement.textContent = `Score: ${score}`;
-    tile.style.opacity = "0";
-  }
-}
+
 
 // End the game
 // function endGame() {
