@@ -51,18 +51,23 @@ const tile5 = document.querySelector(".tile5");
 // Add a click event listener to each tile
 tile1.addEventListener("click", function () {
   handleTileClick(tile1);
+  tile1.style.display = "none";
 });
 tile2.addEventListener("click", function () {
   handleTileClick(tile2);
+  tile2.style.display = "none";
 });
 tile3.addEventListener("click", function () {
   handleTileClick(tile3);
+  tile3.style.display = "none";
 });
 tile4.addEventListener("click", function () {
   handleTileClick(tile4);
+  tile4.style.display = "none";
 });
 tile5.addEventListener("click", function () {
   handleTileClick(tile5);
+  tile5.style.display = "none";
 });
 
 // Function to handle tile clicks
@@ -72,6 +77,7 @@ function handleTileClick(tile) {
     scoreElement.textContent = `Score: ${score}`;
     tile.style.opacity = "0";
   }
+  console.log(score);
 }
 
 // // Game variables
@@ -180,7 +186,6 @@ function startGame() {
     }
   }, 70);
 }
-
 
 // End the game
 // function endGame() {
