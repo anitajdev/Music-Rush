@@ -217,12 +217,12 @@ function calculateScore() {
 function showResult() {
   let result = `<div class="d-flex flex-column mb-3 result_box">
 
-  <div class="p-2 h3 final_score_text">You've scored 0 points</div>
+  <div class="p-2 h2 final_score_text">You've scored ${sco} points</div>
 
   <div class="p-2 buttons">
-  <a class="p-3 m-3 d-flex flex-column justify-content-center align-self-center btn btn-outline-light" href="#" role="button">Retry</a>
+  <a class="p-3 m-3 d-flex flex-column justify-content-center align-self-center btn btn-outline-light" href="index.html" role="button">Retry</a>
   </div>
-</div>`;
+   </div>`;
 
   mainHeader.innerHTML = result;
 }
