@@ -21,6 +21,7 @@ const scoreElement = document.getElementById("score");
 const startButton = document.querySelector(".start-button");
 const gameHeader = document.querySelector(".game-header");
 const tiles = document.querySelectorAll("#tile");
+const mainHeader = document.querySelector(".game-style");
 
 // Make tiles clickable
 
@@ -33,6 +34,7 @@ tiles.forEach(tile => {
 
 function deleteTiles(e){
   e.target.style.display = "none";
+  e.target.classList.add("clicked");
 }
 
 // START THE GAME
@@ -93,8 +95,15 @@ function startGame() {
       tile1.style.borderRadius = "0px";
     }
 
+    if(startPos1 == 70 && !tile1.classList.contains("clicked")){
+
+      tile1.style.backgroundColor = "red";
+      showResult();
+    }
+
     if (startPos1 == endPos) {
       tile1.style.borderRadius = `0px 0px 0px 27px`;
+      tile1.classList.remove("clicked");
       // clearInterval(moving1);
       startPos1 = -40;
       tile1.style.display = "block";
@@ -113,12 +122,21 @@ function startGame() {
       tile2.style.opacity = "1";
     }
 
+    if(startPos2 == 70 && !tile2.classList.contains("clicked")){
+
+      tile2.style.backgroundColor = "red";
+      showResult();
+    }
+
     if (startPos2 == endPos) {
+      tile2.classList.remove("clicked");
       // clearInterval(moving2);
       startPos2= -60;
       tile2.style.display = "block";
     }
+
   }, 30);
+
 
   let moving3 = setInterval(() => {
     startPos3++;
@@ -130,7 +148,15 @@ function startGame() {
       tile3.style.opacity = "1";
     }
 
+
+    if(startPos3 == 70 && !tile3.classList.contains("clicked")){
+
+      tile3.style.backgroundColor = "red";
+      showResult();
+    }
+
     if (startPos3 == endPos) {
+      tile3.classList.remove("clicked");
       // clearInterval(moving3);
       startPos3= -50;
       tile3.style.display = "block";
@@ -147,8 +173,15 @@ function startGame() {
       tile4.style.opacity = "1";
     }
 
+    if(startPos4 == 70 && !tile4.classList.contains("clicked")){
+
+      tile4.style.backgroundColor = "red";
+      showResult();
+    }
+
     if (startPos4 == endPos) {
       // clearInterval(moving4);
+      tile4.classList.remove("clicked");
       startPos4 = -70;
       tile4.style.display = "block";
     }
@@ -169,8 +202,10 @@ function startGame() {
       tile5.style.opacity = "1";
     }
 
-    if(tile5.classList.contains("clicked")){
-      startPos5 = -55;
+    if(startPos5 == 70 && !tile5.classList.contains("clicked")){
+
+      tile5.style.backgroundColor = "red";
+      showResult();
     }
 
     if (startPos5 == endPos) {
@@ -192,7 +227,19 @@ function calculateScore(){
 }
 
 
+function showResult(){
 
+  let result = `<div class="d-flex flex-column mb-3 result_box">
+
+  <div class="p-2 final_score_text">You've scored 0 points</div>
+
+  <div class="p-2 buttons">
+  <a class="btn btn-primary" href="#" role="button">Retry</a>
+  </div>
+</div>`;
+
+  mainHeader.innerHTML = result;
+}
 
 
 
