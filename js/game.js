@@ -48,6 +48,7 @@ startButton.addEventListener("click", function () {
 
 /* PLAYING GAME */
 
+
 //tracks
 
 const track1 = document.querySelector(".game-track1");
