@@ -74,6 +74,8 @@ playButtons.forEach((btn) => {
     )}&title=${encodeURIComponent(title)}&audio=${encodeURIComponent(
       audioSrc
     )}`;
+
+   
     window.location.href = `./game.html${queryString}`;
   });
 });

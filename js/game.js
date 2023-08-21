@@ -4,6 +4,8 @@ const artist = urlParams.get("artist");
 const title = urlParams.get("title");
 const audioSrc = urlParams.get("audio");
 
+console.log(artist,title,audioSrc);
+
 // Update header with song information
 const songTitleHeader = document.querySelector(".game-header-info h2");
 const artistNameHeader = document.querySelector(".game-header-info p");
@@ -157,20 +159,20 @@ function startGame() {
 }
 
 // End the game
-function endGame() {
-  clearInterval(gameInterval);
-  audio.pause();
-  resultBox.classList.remove("d-none");
-  finalScoreText.textContent = `You've scored ${score} points`;
-  if (score >= 50) {
-    encouragementText.textContent = "UNBELIEVABLE";
-  } else {
-    encouragementText.textContent = "Nice try!";
-  }
-}
+// function endGame() {
+//   clearInterval(gameInterval);
+//   audio.pause();
+//   resultBox.classList.remove("d-none");
+//   finalScoreText.textContent = `You've scored ${score} points`;
+//   if (score >= 50) {
+//     encouragementText.textContent = "UNBELIEVABLE";
+//   } else {
+//     encouragementText.textContent = "Nice try!";
+//   }
+// }
 
 // Restart the game
-restartButton.addEventListener("click", () => {
-  startGame();
-});
+// restartButton.addEventListener("click", () => {
+//   startGame();
+// });
 
