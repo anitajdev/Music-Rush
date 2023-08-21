@@ -54,6 +54,28 @@
   font-weight: 700;
 }
 
+.score {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 5;
+  top: 10%;
+}
+
+.score p {
+  display: none;
+  font-size: 50px;
+  width: auto;
+  /* color: rgb(255, 0, 85); */
+  color: #000;
+  text-shadow: #af0065 1px 0 10px;
+  z-index: 5;
+}
+
 /* TRACKS */
 
 .game-track1 {
