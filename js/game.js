@@ -4,7 +4,7 @@ const artist = urlParams.get("artist");
 const title = urlParams.get("title");
 const audioSrc = urlParams.get("audio");
 
-console.log(artist, title, audioSrc);
+console.log(artist,title,audioSrc);
 
 // Update header with song information
 const songTitleHeader = document.querySelector(".game-header-info h2");
@@ -24,14 +24,14 @@ const tiles = document.querySelectorAll("#tile");
 
 // Make tiles clickable
 
-tiles.forEach((tile) => {
+tiles.forEach(tile => {
   tile.addEventListener("click", deleteTiles);
   tile.addEventListener("click", calculateScore);
 });
 
 // Delete tiles
 
-function deleteTiles(e) {
+function deleteTiles(e){
   e.target.style.display = "none";
 }
 
@@ -41,7 +41,7 @@ startButton.addEventListener("click", function () {
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.style.display = "none";
   scoreElement.style.display = "block";
-  audio.currentTime += 7;
+  // audio.currentTime +=7;
   audio.play();
   startGame();
 });
@@ -76,7 +76,10 @@ let endPos = 85;
 let score = 0;
 
 function startGame() {
+ 
+
   let moving1 = setInterval(() => {
+
     startPos1++;
 
     tile1.style.top = `${startPos1}%`;
@@ -97,6 +100,7 @@ function startGame() {
       startPos1 = -40;
       tile1.style.display = "block";
     }
+
   }, 30);
 
   let moving2 = setInterval(() => {
@@ -112,7 +116,7 @@ function startGame() {
 
     if (startPos2 == endPos) {
       // clearInterval(moving2);
-      startPos2 = -60;
+      startPos2= -60;
       tile2.style.display = "block";
     }
   }, 30);
@@ -129,7 +133,7 @@ function startGame() {
 
     if (startPos3 == endPos) {
       // clearInterval(moving3);
-      startPos3 = -50;
+      startPos3= -50;
       tile3.style.display = "block";
     }
   }, 30);
@@ -166,7 +170,7 @@ function startGame() {
       tile5.style.opacity = "1";
     }
 
-    if (tile5.classList.contains("clicked")) {
+    if(tile5.classList.contains("clicked")){
       startPos5 = -55;
     }
 
@@ -177,12 +181,13 @@ function startGame() {
       tile5.style.display = "block";
     }
   }, 30);
+
 }
 
 // Calculating score on the screen
 
 let sco = 0;
-function calculateScore() {
+function calculateScore(){
   sco++;
   scoreElement.textContent = `${sco}`;
 }
