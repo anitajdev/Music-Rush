@@ -237,6 +237,7 @@
 /* TILES */
 
 .tile1 {
+  display: block;
   position: absolute;
   top: -40%;
   left: 0%;
@@ -249,6 +250,7 @@
 }
 
 .tile2 {
+  display: block;
   position: absolute;
   top: -60%;
   left: 20%;
@@ -260,6 +262,7 @@
 }
 
 .tile3 {
+  display: block;
   position: absolute;
   top: -50%;
   left: 40%;
@@ -271,6 +274,7 @@
 }
 
 .tile4 {
+  display: block;
   position: absolute;
   top: -70%;
   left: 60%;
@@ -282,6 +286,7 @@
 }
 
 .tile5 {
+  display: block;
   position: absolute;
   top: -55%;
   left: 80%;
