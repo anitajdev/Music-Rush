@@ -26,6 +26,7 @@ const tiles = document.querySelectorAll("#tile");
 
 tiles.forEach(tile => {
   tile.addEventListener("click", deleteTiles);
+  tile.addEventListener("click", calculateScore);
 });
 
 // Delete tiles
@@ -39,6 +40,7 @@ function deleteTiles(e){
 startButton.addEventListener("click", function () {
   gameHeader.classList.replace("d-flex", "d-none");
   startButton.style.display = "none";
+  scoreElement.style.display = "block";
   audio.play();
   startGame();
 });
@@ -69,7 +71,7 @@ let startPos3 = -50;
 let startPos4 = -70;
 let startPos5 = -55;
 
-let endPos = 90;
+let endPos = 85;
 let score = 0;
 
 function startGame() {
@@ -179,26 +181,18 @@ function startGame() {
     }
   }, 30);
 
-
 }
 
-//End the game
+// Calculating score on the screen
 
-function endGame() {
-  clearInterval(gameInterval);
-  audio.pause();
-  resultBox.classList.remove("d-none");
-  finalScoreText.textContent = `You've scored ${score} points`;
-  if (score >= 50) {
-    encouragementText.textContent = "UNBELIEVABLE";
-  } else {
-    encouragementText.textContent = "Nice try!";
-  }
+let sco = 0;
+function calculateScore(){
+  sco++;
+  scoreElement.textContent = `${sco}`;
 }
 
-//Restart the game
 
-restartButton.addEventListener("click", () => {
-  startGame();
-});
+
+
+
 

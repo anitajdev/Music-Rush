@@ -54,25 +54,7 @@
   font-weight: 700;
 }
 
-/* PLAYING GAME */
-
-/* #game {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#game #game-container,
-#game #tiles {
-  position: absolute;
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  display: flex;
-  z-index: 2;
-} */
-
-/* /* .score {
+.score {
   width: 100%;
   max-width: 600px;
   height: auto;
@@ -81,76 +63,18 @@
   justify-content: center;
   padding: 20px 0;
   z-index: 5;
+  top: 10%;
 }
- /* .score p {
+
+.score p {
   display: none;
-  font-size: 40px;
+  font-size: 50px;
   width: auto;
-  color: rgb(255, 0, 85);
+  /* color: rgb(255, 0, 85); */
+  color: #000;
+  text-shadow: #af0065 1px 0 10px;
   z-index: 5;
-}  */
-
-/* #game #game-container .line {
-  width: 25%;
-  border-right: solid 2px #191a20;
-  border-left: solid 2px #191a20;
-} */
-
-/* #game #game-container #line4{
-    border-right: none;
-} */
-
-/* #game #tiles {
-  display: block;
-  overflow: hidden;
-} */
-
-/* #game #tiles div {
-  width: 25%;
-  height: 30%;
-  position: absolute;
-  top: -30%;
-  background: black;
-  outline: none;
-  cursor: pointer;
-} */
-
-/* .move {
-  transform: translateY(145vh);
-  transition: transform linear 2s;
-} */
-/* 
-.speedX1 {
-  transition: transform linear 1.5s;
-}
-
-.speedX2 {
-  transition: transform linear 1.25s;
-}
-
-.speedX3 {
-  transition: transform linear 1s;
-}
-
-.speedX4 {
-  transition: transform linear 0.75s;
-} */
-
-/* .buttons button {
-  margin: 0 10px;
-  width: auto;
-  height: 40px;
-  padding: 0 20px;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 5px;
-  border: 1px solid #007bff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
+} 
 
 /* TRACKS */
 
