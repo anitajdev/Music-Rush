@@ -98,7 +98,7 @@ function startGame() {
       tile1.style.display = "block";
     }
 
-  }, 50);
+  }, 30);
 
   let moving2 = setInterval(() => {
     startPos2++;
@@ -116,7 +116,7 @@ function startGame() {
       startPos2= -60;
       tile2.style.display = "block";
     }
-  }, 50);
+  }, 30);
 
   let moving3 = setInterval(() => {
     startPos3++;
@@ -133,7 +133,7 @@ function startGame() {
       startPos3= -50;
       tile3.style.display = "block";
     }
-  }, 50);
+  }, 30);
 
   let moving4 = setInterval(() => {
     startPos4++;
@@ -150,7 +150,7 @@ function startGame() {
       startPos4 = -70;
       tile4.style.display = "block";
     }
-  }, 50);
+  }, 30);
 
   let moving5 = setInterval(() => {
     startPos5++;
@@ -177,7 +177,7 @@ function startGame() {
       startPos5 = -55;
       tile5.style.display = "block";
     }
-  }, 50);
+  }, 30);
 
 
 }
