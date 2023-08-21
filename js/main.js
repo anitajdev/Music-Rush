@@ -38,10 +38,17 @@ function changeContent() {
 }
 
 // AUDIO BUTTONS
+let clicked = false;
 
 function toggleAudio(audioIndex) {
   const audioElement = document.querySelector(`.audio${audioIndex}`);
-
+  const playPauseButtons = document.querySelectorAll(".togglePlayPause");
+  
+  playButtons.forEach((button)=>{
+    button.addEventListener("click",()=>{
+      
+    })
+  })
   if (audioElement.paused) {
     audioElement.play();
   } else {
@@ -49,11 +56,11 @@ function toggleAudio(audioIndex) {
   }
 }
 
-let clicked = false;
+
 
 function toggleAudio(audioIndex) {
   const audioElement = document.querySelector(`.audio${audioIndex}`);
-  const playPauseButtons = document.querySelectorAll(".togglePlayPause");
+  
 
   playPauseButtons.forEach((button) => {
     button.addEventListener("click", () => {
