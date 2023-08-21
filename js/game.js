@@ -76,7 +76,9 @@ let startPos5 = -55;
 let endPos = 90;
 let score = 0;
 
+
 function startGame() {
+
   let moving1 = setInterval(() => {
     startPos1++;
 
