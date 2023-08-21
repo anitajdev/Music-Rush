@@ -4,7 +4,7 @@ const artist = urlParams.get("artist");
 const title = urlParams.get("title");
 const audioSrc = urlParams.get("audio");
 
-console.log(artist,title,audioSrc);
+console.log(artist, title, audioSrc);
 
 // Update header with song information
 const songTitleHeader = document.querySelector(".game-header-info h2");
@@ -48,6 +48,23 @@ const tile3 = document.querySelector(".tile3");
 const tile4 = document.querySelector(".tile4");
 const tile5 = document.querySelector(".tile5");
 
+// Add a click event listener to each tile
+tile1.addEventListener("click", function () {
+  handleTileClick(tile1);
+});
+tile2.addEventListener("click", function () {
+  handleTileClick(tile2);
+});
+tile3.addEventListener("click", function () {
+  handleTileClick(tile3);
+});
+tile4.addEventListener("click", function () {
+  handleTileClick(tile4);
+});
+tile5.addEventListener("click", function () {
+  handleTileClick(tile5);
+});
+
 // // Game variables
 
 let startPos1 = -40;
@@ -60,8 +77,6 @@ let endPos = 90;
 let score = 0;
 
 function startGame() {
- 
-
   let moving1 = setInterval(() => {
     startPos1++;
 
@@ -154,8 +169,14 @@ function startGame() {
       startPos5 = -55;
     }
   }, 70);
-
-
+}
+// Function to handle tile clicks
+function handleTileClick(tile) {
+  if (tile.style.opacity === "1") {
+    score++;
+    scoreElement.textContent = `Score: ${score}`;
+    tile.style.opacity = "0";
+  }
 }
 
 // End the game
@@ -175,4 +196,3 @@ function startGame() {
 // restartButton.addEventListener("click", () => {
 //   startGame();
 // });
-
